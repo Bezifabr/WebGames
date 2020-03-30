@@ -3,6 +3,7 @@ var aWidth;
 var aHeight;
 var timer;
 var timeLeft = 30;
+var combo = 0;
 
 window.addEventListener('load', setGameAreaBounds);
 
@@ -21,8 +22,10 @@ function setGameAreaBounds() {
 }
 
 function detectHit() {
-    score += 1;
+    score++;
     document.getElementById('scoreLabel').innerHTML = "Score: " + score;
+    combo++;
+    document.getElementById('comboLabel').innerHTML = "Combo: " + combo;
     moveDot();
 }
 
@@ -32,11 +35,18 @@ function iterate() {
         timer = setTimeout("iterate()", 1000);
         timeLeft--;
         document.getElementById('timeLabel').innerHTML = "Time left: " + timeLeft;
+        document.getElementById('comboLabel').innerHTML = "";
+        if(combo > 1){
+            timeLeft++;
+            document.getElementById('comboLabel').innerHTML = "COMBO BONUS";
+        }
+        combo = 0;
     }
     else {
         clearTimeout(timer);
         document.getElementById('scoreLabel').innerHTML += "     GAME OVER!";
         document.getElementById('timeLabel').innerHTML = "";
+        document.getElementById('comboLabel').innerHTML = "";
         document.getElementById('dot').removeEventListener("click", detectHit);
     }
 }
