@@ -19,7 +19,6 @@ function PlaySound(padId) {
     }
 }
 
-
 function RandomizePad() {
     var padNumber = Math.floor(Math.random() * 4) + 1;
     sequenceQueue.push(padNumber);
@@ -38,14 +37,31 @@ function GameOver() {
     gameOver = true;
 }
 
+function SetWrong(padNumber){
+    var pad = document.getElementById("pad"+padNumber);
+    pad.classList.add("wrong");
+}
+
+function SetGood(padNumber) {
+    var pad = document.getElementById("pad"+padNumber);
+    pad.classList.add('good');
+    setTimeout(function () {
+        pad.classList.remove('good');
+    }, 500);
+}
+
 function CheckPad(padNumber) {
     if (gameOver == false) {
         if (secondQueue.length > 0) {
             var currentPad = secondQueue.shift();
-            if (padNumber != currentPad)
+            if (padNumber != currentPad) {
+                SetWrong(padNumber);
                 GameOver();
-            else
+            }
+            else {
+                SetGood(padNumber);
                 PlaySound(currentPad);
+            }
 
             if (gameOver == false && secondQueue.length <= 0) {
                 score++;

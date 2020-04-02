@@ -68,3 +68,15 @@
     border-color: black;
     box-shadow: 0 0 10px black;
 }
+
+.wrong{
+    transform:scale(1.1);
+    border-width: thick;
+    border-color: red;
+}
+
+.good {
+    transform: scale(1.1);
+    border-width: thick;
+    border-color: green;
+}
