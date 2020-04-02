@@ -16,7 +16,15 @@ function PlaySound(padId) {
     }
 }
 
+
+function RandomizePad() {
+    var padNumber = Math.floor(Math.random() * 4) + 1;
+
+    PlaySound(padNumber);
+}
+
 function GameStart(){
+    RandomizePad();
 
 }
 
