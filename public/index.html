@@ -2,11 +2,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        html{
+            background-color: beige;
+        }
+
+        .card{
+            background-color: aliceblue;
+            margin: 10px;
+            float:left;
+        }
+
+        .card-img-top{
+            width: 100%;
+            height: 275px;
+        }
+    </style>
 </head>
 <body>
     <div id="chooseGameArea">
-        <a href="games/ButtonChaser/html/buttonChaser.html"><button id="buttonChaser">Button Chaser</button></a>
-        <a href="games/SoundsRepeat/html/SoundsRepeat.html"><button id="soundsRepeat">Sounds Repeat</button></a>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="games/ButtonChaser/ButtonChaser.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Button Chaser</h5>
+                <p class="card-text">Hit the button as fast as you can. Prove your reaction in action!</p>
+                <a href="games/SoundsRepeat/html/games/ButtonChaser/html/buttonChaser.html" class="btn btn-primary">Play</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="games/SoundsRepeat/SoundsRepeat.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Sounds Repeat</h5>
+                <p class="card-text">Play the sounds with instructions. See how good is your memory!</p>
+                <a href="games/SoundsRepeat/html/SoundsRepeat.html" class="btn btn-primary">Play</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
