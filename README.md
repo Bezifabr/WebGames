@@ -7,6 +7,7 @@ This is a repository with some games made with Javascript.
 ### Table of Games
 - [Button Chaser](https://github.com/Bezifabr/WebGames/tree/master/public/games/ButtonChaser)
 - [Sounds repeat](https://github.com/Bezifabr/WebGames/tree/master/public/games/SoundsRepeat)
+- [Snake](https://github.com/Bezifabr/WebGames/tree/master/public/games/Snake)
 
 ### Run Instruction
 *TBD*
