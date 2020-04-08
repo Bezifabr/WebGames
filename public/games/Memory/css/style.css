@@ -1,0 +1,20 @@
+
+html{
+    background-color: rosybrown;
+}
+
+.memocard {
+    background-color: saddlebrown;
+    width: 164px;
+    height: 164px;
+}
+
+#gameArea {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 164px 164px 164px 164px;
+    grid-gap: 10px;
+    top: 75px;
+    left: 10px;
+    border: 1px navy solid;
+}
