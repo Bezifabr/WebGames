@@ -1,12 +1,8 @@
-var CardsGenerator = function () {
-    this.generator = "";
+var CardsGenerator = function (generator) {
+    this.generator = generator
 }
 
 CardsGenerator.prototype = {
-    setStrategy: function(generator){
-        this.generator = generator;
-    },
-
     generate: function (gameArea) {
         this.generator.generate(gameArea);
     }

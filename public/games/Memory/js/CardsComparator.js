@@ -1,12 +1,8 @@
-var CardsComparator = function() {
-    this.comparator = "";
+var CardsComparator = function(comparator) {
+    this.comparator = comparator;
 };
 
 CardsComparator.prototype = {
-    setStrategy: function(comparator) {
-        this.comparator = comparator;
-    },
-
     isReadyToCompare: function(revealedCardsValues){
         return this.comparator.isReadyToCompare(revealedCardsValues);
     },
