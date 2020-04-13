@@ -29,6 +29,8 @@ function CompareCards() {
     if(cardsComparator.areCardsMatched(revealedCardsValues)) {
         for (var i = 0; i < revealedCardsIds.length; i++)
             document.querySelector(".card-" + revealedCardsIds[i]).remove();
+        score+= 50;
+        document.querySelector("#scoreLabel").innerHTML = "Score: " + score;
     } else {
         for(var i = 0; i < revealedCardsIds.length; i++)
             FlipBack(revealedCardsIds[i]);
