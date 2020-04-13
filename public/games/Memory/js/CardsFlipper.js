@@ -1,4 +1,10 @@
 
+function IsCardRevealed(cardId) {
+    return revealedCardsIds.find(function (id) {
+        return id === cardId;
+    });
+}
+
 function FlipBack(cardId) {
     var elem = document.querySelector(".card-" + cardId);
     elem.classList.remove("flip");
@@ -7,7 +13,7 @@ function FlipBack(cardId) {
 
 function Flip(cardId) {
 
-    if (!cardsComparator.isReadyToCompare(revealedCardsValues)) {
+    if (!cardsComparator.isReadyToCompare(revealedCardsValues) && !IsCardRevealed(cardId)) {
         revealedCardsIds.push(cardId);
         revealedCardsValues.push(values[cardId - 1]);
         var elem = document.querySelector(".card-" + cardId);
