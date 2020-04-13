@@ -8,7 +8,7 @@ function IsCardRevealed(cardId) {
 function FlipBack(cardId) {
     var elem = document.querySelector(".card-" + cardId);
     elem.classList.remove("flip");
-    elem.lastElementChild.lastElementChild.innerHTML = "";
+    elem.lastElementChild.innerHTML = "";
 }
 
 function Flip(cardId) {
@@ -18,7 +18,7 @@ function Flip(cardId) {
         revealedCardsValues.push(values[cardId - 1]);
         var elem = document.querySelector(".card-" + cardId);
         elem.classList.add("flip");
-        elem.lastElementChild.lastElementChild.innerHTML = values[cardId - 1];
+        elem.lastElementChild.innerHTML = values[cardId - 1];
     }
 
     if (cardsComparator.isReadyToCompare(revealedCardsValues))

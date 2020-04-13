@@ -19,9 +19,9 @@ TwelveCardsGenerator = function () {
                  }
              })(i);
              flipper.classList.add("flipper");
-             flipper.classList.add("card-" + i);
              var card = document.createElement("div");
              card.classList.add("card");
+             card.classList.add("card-" + i);
              var front = document.createElement("div");
              front.classList.add("front");
              var back = document.createElement("div");
@@ -31,6 +31,5 @@ TwelveCardsGenerator = function () {
              flipper.appendChild(card);
              gameArea.appendChild(flipper);
          }
-         console.log(gameArea);
     }
 }
