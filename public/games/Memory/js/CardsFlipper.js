@@ -6,11 +6,14 @@ function FlipBack(cardId) {
 }
 
 function Flip(cardId) {
-    var elem = document.querySelector(".card-" + cardId);
-    elem.classList.add("flip");
-    elem.lastElementChild.lastElementChild.innerHTML = values[cardId - 1];
-    revealedCardsIds.push(cardId);
-    revealedCardsValues.push(values[cardId - 1]);
+
+    if (!cardsComparator.isReadyToCompare(revealedCardsValues)) {
+        revealedCardsIds.push(cardId);
+        revealedCardsValues.push(values[cardId - 1]);
+        var elem = document.querySelector(".card-" + cardId);
+        elem.classList.add("flip");
+        elem.lastElementChild.lastElementChild.innerHTML = values[cardId - 1];
+    }
 
     if (cardsComparator.isReadyToCompare(revealedCardsValues))
         window.setTimeout(CompareCards, 1000);
