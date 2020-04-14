@@ -3,7 +3,7 @@ var valuesGenerator = new ValuesGenerator(new IntegerValuesGenerator());
 
 var gameArea = document.getElementById("gameArea");
 
-var values = [];
+var cards = [];
 var revealedCardsValues = [];
 var revealedCardsIds = [];
 
@@ -13,7 +13,7 @@ var numberOfValues = 12;
 
 function GameStart(){
     GenerateCards(gameArea, numberOfValues);
-    values = valuesGenerator.generate(numberOfValues);
+    cards = valuesGenerator.generate(numberOfValues);
 }
 
 window.onload = GameStart;

@@ -15,10 +15,10 @@ function Flip(cardId) {
 
     if (!cardsComparator.isReadyToCompare(revealedCardsValues) && !IsCardRevealed(cardId)) {
         revealedCardsIds.push(cardId);
-        revealedCardsValues.push(values[cardId - 1]);
+        revealedCardsValues.push(cards[cardId - 1].value);
         var elem = document.querySelector(".card-" + cardId);
         elem.classList.add("flip");
-        elem.lastElementChild.innerHTML = values[cardId - 1];
+        elem.lastElementChild.innerHTML = cards[cardId - 1].value;
     }
 
     if (cardsComparator.isReadyToCompare(revealedCardsValues))

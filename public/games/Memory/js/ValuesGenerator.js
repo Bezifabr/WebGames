@@ -17,16 +17,18 @@ ValuesGenerator.prototype = {
 
 var IntegerValuesGenerator = function () {
     this.generate = function(numberOfValues){
-        var valuesArray = [];
+        var cardsArray = [];
         var value = 0;
+        var card = new Card("", "");
         for(var i = 0; i < numberOfValues/2; i++) {
             do {
                 value = Math.floor(Math.random() * (100)) + 1;
-            } while (valuesArray.indexOf(value) > -1);
-            valuesArray.push(value);
-            valuesArray.push(value);
+                card = new Card(value, value);
+            } while (cardsArray.indexOf(card) > -1);
+            cardsArray.push(card);
+            cardsArray.push(card);
         }
-        shuffleArray(valuesArray);
-        return valuesArray;
+        shuffleArray(cardsArray);
+        return cardsArray;
     }
 }
