@@ -18,7 +18,7 @@ function Flip(cardId) {
         revealedCardsValues.push(cards[cardId - 1].value);
         var elem = document.querySelector(".card-" + cardId);
         elem.classList.add("flip");
-        elem.lastElementChild.innerHTML = cards[cardId - 1].value;
+        elem.lastElementChild.innerHTML = cards[cardId - 1].text;
     }
 
     if (cardsComparator.isReadyToCompare(revealedCardsValues))
