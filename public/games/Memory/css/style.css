@@ -6,6 +6,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#game{
+    width: 50%;
+    margin: 0 auto;
+}
+
 .up {
     color: #55DD11;
 }
@@ -59,10 +64,7 @@ body {
 }
 
 #gameArea {
-    position: absolute;
     display: grid;
     grid-template-columns: 164px 164px 164px 164px;
     grid-gap: 10px;
-    top: 75px;
-    left: 10px;
 }
