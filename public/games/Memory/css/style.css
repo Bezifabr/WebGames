@@ -53,6 +53,9 @@ body {
 .back {
     transform: rotateY(180deg);
     height: 100%;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
 }
 
 #gameArea {
