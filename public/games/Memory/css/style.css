@@ -1,10 +1,14 @@
-
 html{
-    background-color: rosybrown;
+    background-color: white;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#game{
+    width: 50%;
+    margin: 0 auto;
 }
 
 .up {
@@ -19,17 +23,19 @@ body {
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
-    background-color: #654321;
+    background-color: #6e8ccb;
 }
 
 .flipper {
+    width: 164px;
+    height: 164px;
     padding-left: 0px;
     padding-right: 0px;
     margin-bottom: 10px;
     perspective: 1000px;
 }
 
-.flip .card {
+.flip {
     transform: rotateY(180deg);
 }
 
@@ -46,20 +52,19 @@ body {
     z-index: 2;
     transform: rotateY(0deg);
     height: 100%;
-    background-color: saddlebrown;
+    background-color: #3b5998;
 }
 
 .back {
     transform: rotateY(180deg);
     height: 100%;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
 }
 
 #gameArea {
-    position: absolute;
     display: grid;
     grid-template-columns: 164px 164px 164px 164px;
     grid-gap: 10px;
-    top: 75px;
-    left: 10px;
-    border: 1px navy solid;
 }
