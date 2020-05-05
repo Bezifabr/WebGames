@@ -18,5 +18,6 @@ function GenerateCards(gameArea, numberOfCards) {
         card.appendChild(back);
         flipper.appendChild(card);
         gameArea.appendChild(flipper);
+        numOfCards = numberOfCards;
     }
 }

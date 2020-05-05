@@ -1,4 +1,6 @@
 
+var numOfCards = 0;
+
 function IsCardRevealed(cardId) {
     return revealedCardsIds.find(function (id) {
         return id === cardId;
@@ -31,6 +33,10 @@ function CompareCards() {
             document.querySelector(".card-" + revealedCardsIds[i]).remove();
         score+= 100;
         document.querySelector("#scoreLabel").innerHTML = "Score: " + score;
+        numOfCards -= 2;
+        console.log(numOfCards);
+        if(numOfCards <= 0)
+            location.replace('../../../index.html');
     } else {
         for(var i = 0; i < revealedCardsIds.length; i++)
             FlipBack(revealedCardsIds[i]);
