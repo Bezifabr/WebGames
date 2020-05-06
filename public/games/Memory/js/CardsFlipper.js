@@ -13,14 +13,22 @@ function FlipBack(cardId) {
     elem.lastElementChild.innerHTML = "";
 }
 
+function AddCardToRevealed(cardId) {
+    revealedCardsIds.push(cardId);
+    revealedCardsValues.push(cards[cardId - 1].value);
+}
+
+function FlipCard(cardId) {
+    var elem = document.querySelector(".card-" + cardId);
+    elem.classList.add("flip");
+    elem.lastElementChild.innerHTML = cards[cardId - 1].text;
+}
+
 function OnCardClick(cardId) {
 
     if (!cardsComparator.isReadyToCompare(revealedCardsValues) && !IsCardRevealed(cardId)) {
-        revealedCardsIds.push(cardId);
-        revealedCardsValues.push(cards[cardId - 1].value);
-        var elem = document.querySelector(".card-" + cardId);
-        elem.classList.add("flip");
-        elem.lastElementChild.innerHTML = cards[cardId - 1].text;
+        AddCardToRevealed(cardId);
+        FlipCard(cardId);
     }
 
     if (cardsComparator.isReadyToCompare(revealedCardsValues))
