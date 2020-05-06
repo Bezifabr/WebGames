@@ -13,7 +13,7 @@ function FlipBack(cardId) {
     elem.lastElementChild.innerHTML = "";
 }
 
-function Flip(cardId) {
+function OnCardClick(cardId) {
 
     if (!cardsComparator.isReadyToCompare(revealedCardsValues) && !IsCardRevealed(cardId)) {
         revealedCardsIds.push(cardId);

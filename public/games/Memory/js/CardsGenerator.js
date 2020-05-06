@@ -3,7 +3,7 @@ function GenerateCards(gameArea, numberOfCards) {
         var flipper = document.createElement("div");
         (function (i) {
             flipper.onclick = function () {
-                Flip(i);
+                OnCardClick(i);
             }
         })(i);
         flipper.classList.add("flipper");
