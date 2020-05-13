@@ -35,21 +35,37 @@ function OnCardClick(cardId) {
         window.setTimeout(CompareCards, 1000);
 }
 
+function ClearCards(revealedCards) {
+    for (var i = 0; i < revealedCards.length; i++)
+        document.querySelector(".card-" + revealedCards[i]).remove();
+
+    numOfCards -= 2;
+    if (numOfCards <= 0)
+        GoBackToTheMenu();
+}
+
+function HideCards(revelaedCards) {
+    for(var i = 0; i < revelaedCards.length; i++)
+        FlipBack(revelaedCards[i]);
+}
+
+function UpdateScoreWithNewValue(value) {
+    score += value;
+    document.querySelector("#scoreLabel").innerHTML = "Score: " + score;
+}
+
+function GoBackToTheMenu() {
+        location.replace('../../../index.html');
+}
+
 function CompareCards() {
     if(cardsComparator.areCardsMatched(revealedCardsValues)) {
-        for (var i = 0; i < revealedCardsIds.length; i++)
-            document.querySelector(".card-" + revealedCardsIds[i]).remove();
-        score+= 100;
-        document.querySelector("#scoreLabel").innerHTML = "Score: " + score;
-        numOfCards -= 2;
-        console.log(numOfCards);
-        if(numOfCards <= 0)
-            location.replace('../../../index.html');
-    } else {
-        for(var i = 0; i < revealedCardsIds.length; i++)
-            FlipBack(revealedCardsIds[i]);
-        score -= 25;
-        document.querySelector("#scoreLabel").innerHTML = "Score: " + score;
+        ClearCards(revealedCardsIds);
+        UpdateScoreWithNewValue(100);
+    }
+    else {
+        HideCards(revealedCardsIds);
+        UpdateScoreWithNewValue(-25);
     }
 
     revealedCardsIds = [];
